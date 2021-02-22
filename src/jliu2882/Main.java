@@ -24,6 +24,7 @@ public class Main extends Application {
     final String TITLE = "Daily Tasks";
     final int WIDTH = 750;
     final int HEIGHT = 500;
+    final static String fileName = "C:\\IntelliJ\\todoList\\src\\jliu2882\\CharacterInfo";
     final int ANIMATIONSPEED = 1000; //bad var name but higher speed = slower lol
 
     private Label system = new Label("");

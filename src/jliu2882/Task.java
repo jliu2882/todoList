@@ -28,6 +28,6 @@ public class Task {
         this.timesDone = 0;
     }
     public String toString(){
-        return (repeatable?"(repeatable)":"")+description+","+exp;
+        return (repeatable?"(repeatable)":"")+description+"<>"+exp;
     }
 }

@@ -10,13 +10,13 @@ public class Character {
     private int level,exp;
     private Task task1,task2,task3,task4,task5;
     public Character(int pos) throws FileNotFoundException{
-        File f = new File("C:\\IntelliJ\\todo\\src\\jliu2882\\CharacterInfo");
+        File f = new File(Main.fileName);
         Scanner in = new Scanner(f);
         ArrayList<String> arrList = new ArrayList<String>();
         while (in.hasNext()) {
             arrList.add(in.nextLine());
         }
-        String[] character = arrList.get(pos).split(",");
+        String[] character = arrList.get(pos).split("<>");
         this.name = character[0];
         this.level = Integer.parseInt(character[1]);
         this.exp = Integer.parseInt(character[2]);
@@ -74,9 +74,9 @@ public class Character {
     }
     public void updateCSV(){
         try {
-            FileWriter csvWriter = new FileWriter("C:\\IntelliJ\\todo\\src\\jliu2882\\CharacterInfo");
+            FileWriter csvWriter = new FileWriter(Main.fileName);
             csvWriter.write("");
-            csvWriter.append(name+","+level+","+exp+","+task1+","+task2+","+task3+","+task4+","+task5);
+            csvWriter.append(name+"<>"+level+"<>"+exp+"<>"+task1+"<>"+task2+"<>"+task3+"<>"+task4+"<>"+task5);
             csvWriter.flush();
             csvWriter.close();
         }catch(Exception e){
